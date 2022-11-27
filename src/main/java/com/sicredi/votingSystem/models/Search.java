@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 @Data
 @AllArgsConstructor
@@ -27,7 +28,7 @@ public class Search implements Serializable {
     @Column
     private String election;
 
-    @Column
+    @CreatedDate
     private Instant time = Instant.now().plusSeconds(60);
 
     @Column
@@ -35,4 +36,7 @@ public class Search implements Serializable {
 
     @Column
     private Integer negativeVote = 0;
+
+    @Column
+    private String status = "Open".toLowerCase();
 }

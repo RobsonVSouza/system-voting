@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public abstract class SearchMapper {
 
-    public abstract SearchDto toDoVoter(Search searchEntity);
+    public abstract SearchDto toDoSearch(Search searchEntity);
 
     public abstract Search toSearchEntity(SearchDto searchDto);
 

@@ -20,4 +20,6 @@ public class SearchDto {
 
     private Integer negativeVote =0;
 
+    private String status = "Open".toLowerCase();
+
 }

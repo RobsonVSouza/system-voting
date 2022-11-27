@@ -20,11 +20,11 @@ class SearchServiceImpl implements SearchService {
 
     @Override
     public SearchDto save(SearchDto searchDto){
-        Optional<Search> searchEntity = searchRepository.findByElectionId(searchDto.getElection());
+        Optional<Search> searchEntity = searchRepository.findByElection(searchDto.getElection());
         if(searchEntity.isPresent()){
             throw new DefaultException("Pesquisa já foi cadastrada");
         }
-        return searchMapper.toDoVoter(searchRepository.save(searchMapper.toSearchEntity(searchDto)));
+        return searchMapper.toDoSearch(searchRepository.save(searchMapper.toSearchEntity(searchDto)));
     }
 
 
